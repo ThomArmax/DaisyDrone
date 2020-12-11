@@ -1,0 +1,56 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1267
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libdaisy", "libDaisy\libdaisy.vcxproj", "{1B07A9D3-1E1B-488A-9817-4B13EECA191C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "daisysp", "DaisySP\daisysp.vcxproj", "{44F4AEA3-A6B2-4F03-9C28-34B2336BDF57}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DaisyDrone", "DaisyDrone.vcxproj", "{40792E5D-FEDC-4D20-854C-D827B2808F9C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{44F4AEA3-A6B2-4F03-9C28-34B2336BDF57} = {44F4AEA3-A6B2-4F03-9C28-34B2336BDF57}
+		{1B07A9D3-1E1B-488A-9817-4B13EECA191C} = {1B07A9D3-1E1B-488A-9817-4B13EECA191C}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|VisualGDB = Debug|VisualGDB
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|VisualGDB = Release|VisualGDB
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B07A9D3-1E1B-488A-9817-4B13EECA191C}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
+		{1B07A9D3-1E1B-488A-9817-4B13EECA191C}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
+		{1B07A9D3-1E1B-488A-9817-4B13EECA191C}.Debug|x64.ActiveCfg = Debug|VisualGDB
+		{1B07A9D3-1E1B-488A-9817-4B13EECA191C}.Debug|x86.ActiveCfg = Debug|VisualGDB
+		{1B07A9D3-1E1B-488A-9817-4B13EECA191C}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
+		{1B07A9D3-1E1B-488A-9817-4B13EECA191C}.Release|VisualGDB.Build.0 = Release|VisualGDB
+		{1B07A9D3-1E1B-488A-9817-4B13EECA191C}.Release|x64.ActiveCfg = Release|VisualGDB
+		{1B07A9D3-1E1B-488A-9817-4B13EECA191C}.Release|x86.ActiveCfg = Release|VisualGDB
+		{44F4AEA3-A6B2-4F03-9C28-34B2336BDF57}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
+		{44F4AEA3-A6B2-4F03-9C28-34B2336BDF57}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
+		{44F4AEA3-A6B2-4F03-9C28-34B2336BDF57}.Debug|x64.ActiveCfg = Debug|VisualGDB
+		{44F4AEA3-A6B2-4F03-9C28-34B2336BDF57}.Debug|x86.ActiveCfg = Debug|VisualGDB
+		{44F4AEA3-A6B2-4F03-9C28-34B2336BDF57}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
+		{44F4AEA3-A6B2-4F03-9C28-34B2336BDF57}.Release|VisualGDB.Build.0 = Release|VisualGDB
+		{44F4AEA3-A6B2-4F03-9C28-34B2336BDF57}.Release|x64.ActiveCfg = Release|VisualGDB
+		{44F4AEA3-A6B2-4F03-9C28-34B2336BDF57}.Release|x86.ActiveCfg = Release|VisualGDB
+		{40792E5D-FEDC-4D20-854C-D827B2808F9C}.Debug|VisualGDB.ActiveCfg = Debug|Win32
+		{40792E5D-FEDC-4D20-854C-D827B2808F9C}.Debug|x64.ActiveCfg = Debug|Win32
+		{40792E5D-FEDC-4D20-854C-D827B2808F9C}.Debug|x86.ActiveCfg = Debug|Win32
+		{40792E5D-FEDC-4D20-854C-D827B2808F9C}.Debug|x86.Build.0 = Debug|Win32
+		{40792E5D-FEDC-4D20-854C-D827B2808F9C}.Release|VisualGDB.ActiveCfg = Release|Win32
+		{40792E5D-FEDC-4D20-854C-D827B2808F9C}.Release|x64.ActiveCfg = Release|Win32
+		{40792E5D-FEDC-4D20-854C-D827B2808F9C}.Release|x86.ActiveCfg = Release|Win32
+		{40792E5D-FEDC-4D20-854C-D827B2808F9C}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {818B1365-AF42-4E79-98AA-6E6C6E08428F}
+	EndGlobalSection
+EndGlobal

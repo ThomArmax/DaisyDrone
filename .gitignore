@@ -4,3 +4,10 @@ Release
 .settings
 
 src/build
+.vs
+CodeDB
+VisualGDBCache/DaisyDrone-Debug
+*.mak
+gcc_Debug.h
+gcc_Release.h
+*.user
