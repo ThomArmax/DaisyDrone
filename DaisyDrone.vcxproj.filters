@@ -28,14 +28,17 @@
     <Filter Include="Source files\Device-specific files">
       <UniqueIdentifier>{9305a990-7765-4eb0-a037-f99d54d3f50f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header files\src">
+      <UniqueIdentifier>{c92dff64-ed6b-443a-a73d-8a2ed3c00207}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Makefile" />
-    <None Include="libDaisy/core/STM32H750IB_flash.lds">
-      <Filter>Source files</Filter>
-    </None>
     <None Include="stm32.mak">
       <Filter>Source files\Device-specific files</Filter>
+    </None>
+    <None Include="libDaisy\core\STM32H750IB_flash.lds">
+      <Filter>Source files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -57,10 +60,16 @@
     <None Include="stm32.xml">
       <Filter>VisualGDB settings</Filter>
     </None>
+    <ClInclude Include="src\DaisyDrone.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
       <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DaisyDrone.cpp">
+      <Filter>Source files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

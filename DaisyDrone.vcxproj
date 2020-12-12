@@ -79,15 +79,17 @@
   </ImportGroup>
   <ItemGroup />
   <ItemGroup>
+    <ClCompile Include="src\DaisyDrone.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClInclude Include="src\DaisyDrone.h" />
     <ClInclude Include="stm32h7xx_hal_conf.h" />
+    <None Include="libDaisy\core\STM32H750IB_flash.lds" />
     <None Include="Makefile" />
     <None Include="debug.mak" />
     <None Include="release.mak" />
     <None Include="DaisyDrone-Debug.vgdbsettings" />
     <None Include="DaisyDrone-Release.vgdbsettings" />
     <None Include="stm32.xml" />
-    <None Include="libDaisy/core/STM32H750IB_flash.lds" />
     <None Include="stm32.mak" />
   </ItemGroup>
 </Project>
