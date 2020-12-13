@@ -51,6 +51,8 @@ private:
     DaisySeed m_seed;
     Oscillator m_oscs[CHANNELS_COUNT][OSCILLATORS_BY_CHANNEL];    ///< Oscillators array
     Parameter m_channelFreqParam[CHANNELS_COUNT];
+    Oscillator m_freqLfo;
+    Parameter m_freqLfoParam;
 };
 
 #endif // DAISY_DRONE_H

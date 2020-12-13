@@ -2,7 +2,9 @@
 TARGET = daisy_drone
 
 # Sources
-CPP_SOURCES = main.cpp
+CPP_SOURCES = \
+    main.cpp \
+    DaisyDrone.cpp \
 
 C_SOURCES = 
 	
