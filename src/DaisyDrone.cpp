@@ -91,7 +91,7 @@ void DaisyDrone::Init()
     // Global freq LFO init
     AnalogControl freqLogCtl;
     freqLogCtl.Init(m_seed.adc.GetPtr(2), m_seed.AudioCallbackRate());
-    m_freqLfoParam.Init(freqLogCtl, 0.05, 500, Parameter::EXPONENTIAL);
+    m_freqLfoParam.Init(freqLogCtl, LfoFreqMin, LfoFreqMax, Parameter::LINEAR);
     m_freqLfo.Init(sampleRate);
     m_freqLfo.SetFreq(0.0);
     m_freqLfo.SetAmp(50);
