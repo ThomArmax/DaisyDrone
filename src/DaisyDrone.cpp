@@ -122,7 +122,7 @@ void DaisyDrone::AudioCallback(float *in, float *out, size_t size)
 
     for (int chan = 0; chan < CHANNELS_COUNT; chan++)
     {
-        float newFreq = d->m_channelFreqParam[chan].Process() + lfoRate;
+        float newFreq = MAX(d->m_channelFreqParam[chan].Process() + lfoRate, FreqMin);
         for (size_t osc = 0; osc < OSCILLATORS_BY_CHANNEL; osc++)
         {
             d->m_oscs[chan][osc].SetFreq((newFreq + osc*FreqIncFactor));
