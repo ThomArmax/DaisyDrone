@@ -97,6 +97,9 @@ void DaisyDrone::Init()
     m_freqLfo.SetAmp(50);
     m_freqLfo.SetWaveform(Oscillator::WAVE_SIN);
 
+    // Init Switch
+    m_oscsFormSwitch.Init(m_seed.GetPin(28), sampleRate);
+
     // start callback
     m_seed.StartAudio(AudioCallback);
 }
@@ -116,15 +119,28 @@ void DaisyDrone::AudioCallback(float *in, float *out, size_t size)
 
     float sig;
 
+    // Compute freq drift
     float lfoFreq = d->m_freqLfoParam.Process();
     d->m_freqLfo.SetFreq(lfoFreq);
     float lfoRate = abs(d->m_freqLfo.Process());
+
+    // Check for waveform change button
+    static uint8_t waveForm = Oscillator::WAVE_SIN;
+    d->m_oscsFormSwitch.Debounce();
+    if (d->m_oscsFormSwitch.RisingEdge())
+    {
+        waveForm++;
+        if (waveForm == Oscillator::WAVE_LAST)
+            waveForm = Oscillator::WAVE_SIN;
+    }
+
 
     for (int chan = 0; chan < CHANNELS_COUNT; chan++)
     {
         float newFreq = MAX(d->m_channelFreqParam[chan].Process() + lfoRate, FreqMin);
         for (size_t osc = 0; osc < OSCILLATORS_BY_CHANNEL; osc++)
         {
+            d->m_oscs[chan][osc].SetWaveform(waveForm);
             d->m_oscs[chan][osc].SetFreq((newFreq + osc*FreqIncFactor));
         }
     }

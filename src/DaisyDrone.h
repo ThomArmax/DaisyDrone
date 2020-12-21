@@ -53,6 +53,7 @@ private:
     Parameter m_channelFreqParam[CHANNELS_COUNT];
     Oscillator m_freqLfo;
     Parameter m_freqLfoParam;
+    Switch m_oscsFormSwitch;
 };
 
 #endif // DAISY_DRONE_H
