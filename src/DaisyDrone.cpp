@@ -22,7 +22,7 @@ static DaisyDrone * s_instance = nullptr;
 //-------------------------------------------------
 // CONSTANTS
 //-------------------------------------------------
-static const float FreqIncFactor                    = 1.5;          ///< Frequency increment factor for each oscillator of each channel
+static const float FreqIncFactor                    = 0.25;          ///< Frequency increment factor for each oscillator of each channel
 static const uint8_t FreqKnobsPins[CHANNELS_COUNT]  = { 21, 20 };   ///< Channels frequencies knobs pins
 static const float FreqMin                          = 15.0;         ///< Min frequency in Hz
 static const float FreqMax                          = 1000.0;       ///< Max frequency in Hz
@@ -122,7 +122,7 @@ void DaisyDrone::AudioCallback(float *in, float *out, size_t size)
     // Compute freq drift
     float lfoFreq = d->m_freqLfoParam.Process();
     d->m_freqLfo.SetFreq(lfoFreq);
-    float lfoRate = abs(d->m_freqLfo.Process());
+    float lfoRate = d->m_freqLfo.Process();
 
     // Check for waveform change button
     static uint8_t waveForm = Oscillator::WAVE_SIN;
@@ -140,8 +140,9 @@ void DaisyDrone::AudioCallback(float *in, float *out, size_t size)
         float newFreq = MAX(d->m_channelFreqParam[chan].Process() + lfoRate, FreqMin);
         for (size_t osc = 0; osc < OSCILLATORS_BY_CHANNEL; osc++)
         {
+            newFreq += (newFreq*FreqIncFactor);
             d->m_oscs[chan][osc].SetWaveform(waveForm);
-            d->m_oscs[chan][osc].SetFreq((newFreq + osc*FreqIncFactor));
+            d->m_oscs[chan][osc].SetFreq(newFreq);
         }
     }
 
@@ -156,6 +157,6 @@ void DaisyDrone::AudioCallback(float *in, float *out, size_t size)
             }
         }
         out[i] = sig;// left out
-        //out[i + 1] = sig; // right out
+        out[i + 1] = sig; // right out
     }
 }
